@@ -60,7 +60,7 @@ Summary(pl.UTF-8):	Kolekcja kompilatorów GNU: kompilator D i pliki współdziel
 Summary(pt_BR.UTF-8):	Coleção dos compiladores GNU: o compilador C D arquivos compartilhados
 Name:		gcc-d
 Version:	%{major_ver}.%{minor_ver}
-Release:	1
+Release:	2
 Epoch:		6
 License:	GPL v3+
 Group:		Development/Languages
@@ -247,7 +247,7 @@ Summary:	Static D language runtime libraries
 Summary(pl.UTF-8):	Statyczne biblioteki uruchomieniowe dla języka D
 License:	Boost v1.0
 Group:		Development/Libraries
-Requires:	%{name}-d = %{epoch}:%{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description -n libgphobos-static
 Static D language runtime libraries.
@@ -272,7 +272,7 @@ Summary:	Static D language runtime libraries - 32-bit version
 Summary(pl.UTF-8):	Statyczne biblioteki uruchomieniowe dla języka D - wersja 32-bitowa
 Group:		Development/Libraries
 License:	Boost v1.0
-Requires:	%{name}-d-multilib-32 = %{epoch}:%{version}-%{release}
+Requires:	%{name}-multilib-32 = %{epoch}:%{version}-%{release}
 
 %description -n libgphobos-multilib-32-static
 Static D language runtime libraries - 32-bit version.
@@ -297,7 +297,7 @@ Summary:	Static D language runtime libraries - %{m2_desc} version
 Summary(pl.UTF-8):	Statyczne biblioteki uruchomieniowe dla języka D - wersja %{m2_desc}
 Group:		Development/Libraries
 License:	Boost v1.0
-Requires:	%{name}-d-multilib-%{multilib2} = %{epoch}:%{version}-%{release}
+Requires:	%{name}-multilib-%{multilib2} = %{epoch}:%{version}-%{release}
 
 %description -n libgphobos-multilib-%{multilib2}-static
 Static D language runtime libraries - %{m2_desc} version.
