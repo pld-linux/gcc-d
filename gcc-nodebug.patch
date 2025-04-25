@@ -1,0 +1,159 @@
+diff -urNp -x '*.orig' gcc-10.2.0.org/Makefile.in gcc-10.2.0/Makefile.in
+--- gcc-10.2.0.org/Makefile.in	2020-07-23 08:35:16.912379792 +0200
++++ gcc-10.2.0/Makefile.in	2021-03-21 01:23:21.870335808 +0100
+@@ -373,7 +373,7 @@ BUILD_PREFIX_1 = @BUILD_PREFIX_1@
+ 
+ # Flags to pass to stage2 and later makes.  They are defined
+ # here so that they can be overridden by Makefile fragments.
+-BOOT_CFLAGS= -g -O2
++BOOT_CFLAGS= -O2
+ BOOT_LDFLAGS=
+ BOOT_ADAFLAGS= -gnatpg
+ 
+@@ -619,8 +619,8 @@ CXXFLAGS_FOR_TARGET = @CXXFLAGS_FOR_TARG
+ LIBCFLAGS_FOR_TARGET = $(CFLAGS_FOR_TARGET)
+ LIBCXXFLAGS_FOR_TARGET = $(CXXFLAGS_FOR_TARGET) -fno-implicit-templates
+ LDFLAGS_FOR_TARGET = @LDFLAGS_FOR_TARGET@
+-GOCFLAGS_FOR_TARGET = -O2 -g
+-GDCFLAGS_FOR_TARGET = -O2 -g
++GOCFLAGS_FOR_TARGET = -O2
++GDCFLAGS_FOR_TARGET = -O2
+ 
+ FLAGS_FOR_TARGET = @FLAGS_FOR_TARGET@
+ SYSROOT_CFLAGS_FOR_TARGET = @SYSROOT_CFLAGS_FOR_TARGET@
+diff -urNp -x '*.orig' gcc-10.2.0.org/gcc/ada/gcc-interface/Makefile.in gcc-10.2.0/gcc/ada/gcc-interface/Makefile.in
+--- gcc-10.2.0.org/gcc/ada/gcc-interface/Makefile.in	2020-07-23 08:35:17.112381997 +0200
++++ gcc-10.2.0/gcc/ada/gcc-interface/Makefile.in	2021-03-21 01:23:21.859335808 +0100
+@@ -66,7 +66,7 @@
+ # CFLAGS is for the user to override to, e.g., do a bootstrap with -O2.
+ # BOOT_CFLAGS is the value of CFLAGS to pass
+ # to the stage2 and stage3 compilations
+-CFLAGS = -g
++CFLAGS =
+ BOOT_CFLAGS = -O $(CFLAGS)
+ # These exists to be overridden by the t-* files, respectively.
+ T_CFLAGS =
+@@ -105,13 +105,13 @@ TEXI2PDF = texi2pdf
+ GNATBIND_FLAGS = -static -x
+ ADA_CFLAGS =
+ ADAFLAGS = -W -Wall -gnatpg -gnata
+-FORCE_DEBUG_ADAFLAGS = -g
++FORCE_DEBUG_ADAFLAGS =
+ NO_INLINE_ADAFLAGS = -fno-inline
+ NO_OMIT_ADAFLAGS = -fno-omit-frame-pointer
+ NO_SIBLING_ADAFLAGS = -fno-optimize-sibling-calls
+ NO_REORDER_ADAFLAGS = -fno-toplevel-reorder
+ GNATLIBFLAGS = -W -Wall -gnatg -nostdinc
+-GNATLIBCFLAGS = -g -O2
++GNATLIBCFLAGS = -O2
+ # Pretend that _Unwind_GetIPInfo is available for the target by default.  This
+ # should be autodetected during the configuration of libada and passed down to
+ # here, but we need something for --disable-libada and hope for the best.
+diff -urNp -x '*.orig' gcc-10.2.0.org/libada/Makefile.in gcc-10.2.0/libada/Makefile.in
+--- gcc-10.2.0.org/libada/Makefile.in	2020-07-23 08:35:18.684399314 +0200
++++ gcc-10.2.0/libada/Makefile.in	2021-03-21 01:23:21.859335808 +0100
+@@ -61,7 +61,7 @@ LDFLAGS=
+ CFLAGS=-g
+ PICFLAG = @PICFLAG@
+ GNATLIBFLAGS= -W -Wall -gnatpg -nostdinc
+-GNATLIBCFLAGS= -g -O2
++GNATLIBCFLAGS= -O2
+ GNATLIBCFLAGS_FOR_C = -W -Wall $(GNATLIBCFLAGS) $(CFLAGS_FOR_TARGET) \
+ 	-fexceptions -DIN_RTS @have_getipinfo@ @have_capability@
+ 
+diff -urNp -x '*.orig' gcc-10.2.0.org/libffi/Makefile.am gcc-10.2.0/libffi/Makefile.am
+--- gcc-10.2.0.org/libffi/Makefile.am	2020-07-23 08:35:18.736399887 +0200
++++ gcc-10.2.0/libffi/Makefile.am	2021-03-21 01:23:21.859335808 +0100
+@@ -202,7 +202,7 @@ nodist_libffi_convenience_la_SOURCES = $
+ 
+ LTLDFLAGS = $(shell $(SHELL) $(top_srcdir)/../libtool-ldflags $(LDFLAGS))
+ 
+-AM_CFLAGS = -Wall -g -fexceptions
++AM_CFLAGS = -Wall -fexceptions
+ if FFI_DEBUG
+ # Build debug. Define FFI_DEBUG on the commandline so that, when building with
+ # MSVC, it can link against the debug CRT.
+diff -urNp -x '*.orig' gcc-10.2.0.org/libffi/Makefile.in gcc-10.2.0/libffi/Makefile.in
+--- gcc-10.2.0.org/libffi/Makefile.in	2020-07-23 08:35:54.708796179 +0200
++++ gcc-10.2.0/libffi/Makefile.in	2021-03-21 01:23:21.860335808 +0100
+@@ -604,7 +604,7 @@ libffi_convenience_la_LIBADD = $(libffi_
+ libffi_convenience_la_DEPENDENCIES = $(libffi_la_DEPENDENCIES)
+ nodist_libffi_convenience_la_SOURCES = $(nodist_libffi_la_SOURCES)
+ LTLDFLAGS = $(shell $(SHELL) $(top_srcdir)/../libtool-ldflags $(LDFLAGS))
+-AM_CFLAGS = -Wall -g -fexceptions $(am__append_2)
++AM_CFLAGS = -Wall -fexceptions $(am__append_2)
+ @LIBAT_BUILD_VERSIONED_SHLIB_FALSE@libffi_version_script = 
+ @LIBAT_BUILD_VERSIONED_SHLIB_GNU_TRUE@@LIBAT_BUILD_VERSIONED_SHLIB_TRUE@libffi_version_script = -Wl,--version-script,libffi.map
+ @LIBAT_BUILD_VERSIONED_SHLIB_SUN_TRUE@@LIBAT_BUILD_VERSIONED_SHLIB_TRUE@libffi_version_script = -Wl,-M,libffi.map-sun
+diff -urNp -x '*.orig' gcc-10.2.0.org/libgcc/Makefile.in gcc-10.2.0/libgcc/Makefile.in
+--- gcc-10.2.0.org/libgcc/Makefile.in	2020-07-23 08:35:18.748400018 +0200
++++ gcc-10.2.0/libgcc/Makefile.in	2021-03-21 01:23:21.860335808 +0100
+@@ -243,7 +243,7 @@ endif
+ 
+ # Options to use when compiling libgcc2.a.
+ #
+-LIBGCC2_DEBUG_CFLAGS = -g
++LIBGCC2_DEBUG_CFLAGS =
+ LIBGCC2_CFLAGS = -O2 $(LIBGCC2_INCLUDES) $(GCC_CFLAGS) $(HOST_LIBGCC2_CFLAGS) \
+ 		 $(LIBGCC2_DEBUG_CFLAGS) -DIN_LIBGCC2 \
+ 		 -fbuilding-libgcc -fno-stack-protector \
+diff -urNp -x '*.orig' gcc-10.2.0.org/libstdc++-v3/include/Makefile.am gcc-10.2.0/libstdc++-v3/include/Makefile.am
+--- gcc-10.2.0.org/libstdc++-v3/include/Makefile.am	2021-03-21 01:22:56.853335808 +0100
++++ gcc-10.2.0/libstdc++-v3/include/Makefile.am	2021-03-21 01:23:21.861335808 +0100
+@@ -1343,22 +1343,22 @@ ${host_builddir}/gthr-default.h: ${tople
+ # Build two precompiled C++ includes, stdc++.h.gch/*.gch
+ ${pch1a_output}: ${allstamped} ${host_builddir}/c++config.h ${pch1_source}
+ 	-mkdir -p ${pch1_output_builddir}
+-	$(CXX) $(PCHFLAGS) $(AM_CPPFLAGS) -O2 -g -std=gnu++0x ${pch1_source} \
++	$(CXX) $(PCHFLAGS) $(AM_CPPFLAGS) -O2 -std=gnu++0x ${pch1_source} \
+ 	-o $@
+ 
+ ${pch1b_output}: ${allstamped} ${host_builddir}/c++config.h ${pch1_source}
+ 	-mkdir -p ${pch1_output_builddir}
+-	$(CXX) $(PCHFLAGS) $(AM_CPPFLAGS) -O2 -g ${pch1_source} -o $@
++	$(CXX) $(PCHFLAGS) $(AM_CPPFLAGS) -O2 ${pch1_source} -o $@
+ 
+ # Build a precompiled TR1 include, stdtr1c++.h.gch/O2.gch
+ ${pch2_output}: ${pch2_source} ${pch1_output}
+ 	-mkdir -p ${pch2_output_builddir}
+-	$(CXX) $(PCHFLAGS) $(AM_CPPFLAGS) -O2 -g ${pch2_source} -o $@
++	$(CXX) $(PCHFLAGS) $(AM_CPPFLAGS) -O2 ${pch2_source} -o $@
+ 
+ # Build a precompiled extension include, extc++.h.gch/O2.gch
+ ${pch3_output}: ${pch3_source} ${pch2_output}
+ 	-mkdir -p ${pch3_output_builddir}
+-	$(CXX) $(PCHFLAGS) $(AM_CPPFLAGS) -O2 -g ${pch3_source} -o $@
++	$(CXX) $(PCHFLAGS) $(AM_CPPFLAGS) -O2 ${pch3_source} -o $@
+ 
+ # For robustness sake (in light of junk files or in-source
+ # configuration), copy from the build or source tree to the install
+diff -urNp -x '*.orig' gcc-10.2.0.org/libstdc++-v3/include/Makefile.in gcc-10.2.0/libstdc++-v3/include/Makefile.in
+--- gcc-10.2.0.org/libstdc++-v3/include/Makefile.in	2021-03-21 01:22:56.854335808 +0100
++++ gcc-10.2.0/libstdc++-v3/include/Makefile.in	2021-03-21 01:23:21.861335808 +0100
+@@ -1821,22 +1821,22 @@ ${host_builddir}/gthr-default.h: ${tople
+ # Build two precompiled C++ includes, stdc++.h.gch/*.gch
+ ${pch1a_output}: ${allstamped} ${host_builddir}/c++config.h ${pch1_source}
+ 	-mkdir -p ${pch1_output_builddir}
+-	$(CXX) $(PCHFLAGS) $(AM_CPPFLAGS) -O2 -g -std=gnu++0x ${pch1_source} \
++	$(CXX) $(PCHFLAGS) $(AM_CPPFLAGS) -O2 -std=gnu++0x ${pch1_source} \
+ 	-o $@
+ 
+ ${pch1b_output}: ${allstamped} ${host_builddir}/c++config.h ${pch1_source}
+ 	-mkdir -p ${pch1_output_builddir}
+-	$(CXX) $(PCHFLAGS) $(AM_CPPFLAGS) -O2 -g ${pch1_source} -o $@
++	$(CXX) $(PCHFLAGS) $(AM_CPPFLAGS) -O2 ${pch1_source} -o $@
+ 
+ # Build a precompiled TR1 include, stdtr1c++.h.gch/O2.gch
+ ${pch2_output}: ${pch2_source} ${pch1_output}
+ 	-mkdir -p ${pch2_output_builddir}
+-	$(CXX) $(PCHFLAGS) $(AM_CPPFLAGS) -O2 -g ${pch2_source} -o $@
++	$(CXX) $(PCHFLAGS) $(AM_CPPFLAGS) -O2 ${pch2_source} -o $@
+ 
+ # Build a precompiled extension include, extc++.h.gch/O2.gch
+ ${pch3_output}: ${pch3_source} ${pch2_output}
+ 	-mkdir -p ${pch3_output_builddir}
+-	$(CXX) $(PCHFLAGS) $(AM_CPPFLAGS) -O2 -g ${pch3_source} -o $@
++	$(CXX) $(PCHFLAGS) $(AM_CPPFLAGS) -O2 ${pch3_source} -o $@
+ 
+ # For robustness sake (in light of junk files or in-source
+ # configuration), copy from the build or source tree to the install

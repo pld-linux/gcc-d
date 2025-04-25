@@ -1,0 +1,266 @@
+diff -urNp -x '*.orig' gcc-10.2.0.org/gcc/ada/gnat-style.texi gcc-10.2.0/gcc/ada/gnat-style.texi
+--- gcc-10.2.0.org/gcc/ada/gnat-style.texi	2020-07-23 08:35:17.120382083 +0200
++++ gcc-10.2.0/gcc/ada/gnat-style.texi	2021-03-21 01:21:39.481335808 +0100
+@@ -29,9 +29,9 @@ Texts.  A copy of the license is include
+ 
+ @include gcc-common.texi
+ 
+-@dircategory Software development
++@dircategory Programming Languages:
+ @direntry
+-* gnat-style: (gnat-style).      GNAT Coding Style
++* gnat-style: (gnat-style).		GNAT Coding Style
+ @end direntry
+ 
+ @macro syntax{element}
+diff -urNp -x '*.orig' gcc-10.2.0.org/gcc/ada/gnat_rm.texi gcc-10.2.0/gcc/ada/gnat_rm.texi
+--- gcc-10.2.0.org/gcc/ada/gnat_rm.texi	2020-07-23 08:35:17.128382173 +0200
++++ gcc-10.2.0/gcc/ada/gnat_rm.texi	2021-03-21 01:21:39.485335808 +0100
+@@ -10,9 +10,9 @@
+ @paragraphindent 0
+ @exampleindent 4
+ @finalout
+-@dircategory GNU Ada Tools 
++@dircategory Programming Languages:
+ @direntry
+-* gnat_rm: (gnat_rm.info). gnat_rm
++* gnat_rm: (gnat_rm.info).		gnat_rm
+ @end direntry
+ 
+ @definfoenclose strong,`,'
+diff -urNp -x '*.orig' gcc-10.2.0.org/gcc/ada/gnat_ugn.texi gcc-10.2.0/gcc/ada/gnat_ugn.texi
+--- gcc-10.2.0.org/gcc/ada/gnat_ugn.texi	2020-07-23 08:35:17.136382261 +0200
++++ gcc-10.2.0/gcc/ada/gnat_ugn.texi	2021-03-21 01:21:39.489335808 +0100
+@@ -10,9 +10,9 @@
+ @paragraphindent 0
+ @exampleindent 4
+ @finalout
+-@dircategory GNU Ada Tools 
++@dircategory Programming Languages:
+ @direntry
+-* gnat_ugn: (gnat_ugn.info). gnat_ugn
++* gnat_ugn: (gnat_ugn.info).		gnat_ugn
+ @end direntry
+ 
+ @definfoenclose strong,`,'
+diff -urNp -x '*.orig' gcc-10.2.0.org/gcc/doc/cpp.texi gcc-10.2.0/gcc/doc/cpp.texi
+--- gcc-10.2.0.org/gcc/doc/cpp.texi	2021-03-21 01:21:06.752335808 +0100
++++ gcc-10.2.0/gcc/doc/cpp.texi	2021-03-21 01:21:39.480335808 +0100
+@@ -48,9 +48,9 @@ This manual contains no Invariant Sectio
+ @set cppmanual
+ 
+ @ifinfo
+-@dircategory Software development
++@dircategory Programming Languages:
+ @direntry
+-* Cpp: (cpp).                  The GNU C preprocessor.
++* Cpp: (cpp).				The GNU C preprocessor
+ @end direntry
+ @end ifinfo
+ 
+diff -urNp -x '*.orig' gcc-10.2.0.org/gcc/doc/cppinternals.texi gcc-10.2.0/gcc/doc/cppinternals.texi
+--- gcc-10.2.0.org/gcc/doc/cppinternals.texi	2020-07-23 08:35:17.560386932 +0200
++++ gcc-10.2.0/gcc/doc/cppinternals.texi	2021-03-21 01:21:39.481335808 +0100
+@@ -5,9 +5,9 @@
+ @include gcc-common.texi
+ 
+ @ifinfo
+-@dircategory Software development
++@dircategory Programming Languages:
+ @direntry
+-* Cpplib: (cppinternals).      Cpplib internals.
++* Cpplib: (cppinternals).		Cpplib internals
+ @end direntry
+ @end ifinfo
+ 
+diff -urNp -x '*.orig' gcc-10.2.0.org/gcc/doc/gcc.texi gcc-10.2.0/gcc/doc/gcc.texi
+--- gcc-10.2.0.org/gcc/doc/gcc.texi	2020-07-23 08:35:17.564386975 +0200
++++ gcc-10.2.0/gcc/doc/gcc.texi	2021-03-21 01:21:39.481335808 +0100
+@@ -61,15 +61,14 @@ Texts being (a) (see below), and with th
+      funds for GNU development.
+ @end copying
+ @ifnottex
+-@dircategory Software development
++@dircategory Programming Languages:
+ @direntry
+-* gcc: (gcc).                  The GNU Compiler Collection.
+-* g++: (gcc).                  The GNU C++ compiler.
+-* gcov: (gcc) Gcov.            @command{gcov}---a test coverage program.
+-* gcov-tool: (gcc) Gcov-tool.  @command{gcov-tool}---an offline gcda profile processing program.
+-* gcov-dump: (gcc) Gcov-dump.  @command{gcov-dump}---an offline gcda and gcno profile dump tool.
+-* lto-dump: (gcc) lto-dump.    @command{lto-dump}---Tool for
+-dumping LTO object files.
++* gcc: (gcc).				The GNU Compiler Collection
++* g++: (gcc).				The GNU C++ compiler
++* gcov: (gcc) Gcov.			@command{gcov}---a test coverage program
++* gcov-tool: (gcc) Gcov-tool.		@command{gcov-tool}---an offline gcda profile processing program
++* gcov-dump: (gcc) Gcov-dump.		@command{gcov-dump}---an offline gcda and gcno profile dump tool
++* lto-dump: (gcc) lto-dump.		@command{lto-dump}---Tool for dumping LTO object files
+ @end direntry
+ This file documents the use of the GNU compilers.
+ @sp 1
+diff -urNp -x '*.orig' gcc-10.2.0.org/gcc/doc/gccint.texi gcc-10.2.0/gcc/doc/gccint.texi
+--- gcc-10.2.0.org/gcc/doc/gccint.texi	2020-07-23 08:35:17.564386975 +0200
++++ gcc-10.2.0/gcc/doc/gccint.texi	2021-03-21 01:21:39.481335808 +0100
+@@ -47,9 +47,9 @@ Texts being (a) (see below), and with th
+      funds for GNU development.
+ @end copying
+ @ifnottex
+-@dircategory Software development
++@dircategory Programming Languages:
+ @direntry
+-* gccint: (gccint).            Internals of the GNU Compiler Collection.
++* gccint: (gccint).			Internals of the GNU Compiler Collection
+ @end direntry
+ This file documents the internals of the GNU compilers.
+ @sp 1
+diff -urNp -x '*.orig' gcc-10.2.0.org/gcc/doc/install.texi gcc-10.2.0/gcc/doc/install.texi
+--- gcc-10.2.0.org/gcc/doc/install.texi	2021-03-21 01:21:15.938335808 +0100
++++ gcc-10.2.0/gcc/doc/install.texi	2021-03-21 01:21:39.491335808 +0100
+@@ -91,9 +91,9 @@ Free Documentation License}''.
+ @ifinfo
+ @insertcopying
+ @end ifinfo
+-@dircategory Software development
++@dircategory Programming Languages:
+ @direntry
+-* gccinstall: (gccinstall).    Installing the GNU Compiler Collection.
++* gccinstall: (gccinstall).		Installing the GNU Compiler Collection
+ @end direntry
+ 
+ @c Part 3 Titlepage and Copyright
+diff -urNp -x '*.orig' gcc-10.2.0.org/gcc/fortran/gfc-internals.texi gcc-10.2.0/gcc/fortran/gfc-internals.texi
+--- gcc-10.2.0.org/gcc/fortran/gfc-internals.texi	2020-07-23 08:35:17.604387417 +0200
++++ gcc-10.2.0/gcc/fortran/gfc-internals.texi	2021-03-21 01:21:39.494335808 +0100
+@@ -53,9 +53,9 @@ Texts being (a) (see below), and with th
+ @end copying
+ 
+ @ifinfo
+-@dircategory Software development
++@dircategory Programming Languages:
+ @direntry
+-* gfortran: (gfortran).                  The GNU Fortran Compiler.
++* gfortran: (gfortran).			The GNU Fortran Compiler
+ @end direntry
+ This file documents the internals of the GNU Fortran
+ compiler, (@command{gfortran}).
+diff -urNp -x '*.orig' gcc-10.2.0.org/gcc/fortran/gfortran.texi gcc-10.2.0/gcc/fortran/gfortran.texi
+--- gcc-10.2.0.org/gcc/fortran/gfortran.texi	2020-07-23 08:35:17.604387417 +0200
++++ gcc-10.2.0/gcc/fortran/gfortran.texi	2021-03-21 01:21:39.491335808 +0100
+@@ -99,9 +99,9 @@ Texts being (a) (see below), and with th
+ @end copying
+ 
+ @ifinfo
+-@dircategory Software development
++@dircategory Programming Languages:
+ @direntry
+-* gfortran: (gfortran).                  The GNU Fortran Compiler.
++* gfortran: (gfortran).			The GNU Fortran Compiler
+ @end direntry
+ This file documents the use and the internals of
+ the GNU Fortran compiler, (@command{gfortran}).
+diff -urNp -x '*.orig' gcc-10.2.0.org/gcc/go/gccgo.texi gcc-10.2.0/gcc/go/gccgo.texi
+--- gcc-10.2.0.org/gcc/go/gccgo.texi	2020-07-23 08:35:17.644387858 +0200
++++ gcc-10.2.0/gcc/go/gccgo.texi	2021-03-21 01:21:39.492335808 +0100
+@@ -48,9 +48,9 @@ man page gfdl(7).
+ 
+ @ifinfo
+ @format
+-@dircategory Software development
++@dircategory Programming Languages:
+ @direntry
+-* Gccgo: (gccgo).           A GCC-based compiler for the Go language
++* Gccgo: (gccgo).			A GCC-based compiler for the Go language
+ @end direntry
+ @end format
+ 
+diff -urNp -x '*.orig' gcc-10.2.0.org/libffi/doc/libffi.texi gcc-10.2.0/libffi/doc/libffi.texi
+--- gcc-10.2.0.org/libffi/doc/libffi.texi	2020-07-23 08:35:18.740399932 +0200
++++ gcc-10.2.0/libffi/doc/libffi.texi	2021-03-21 01:21:39.493335808 +0100
+@@ -31,9 +31,9 @@ section entitled ``GNU General Public Li
+ @end quotation
+ @end copying
+ 
+-@dircategory Development
++@dircategory Libraries:
+ @direntry
+-* libffi: (libffi).             Portable foreign-function interface library.
++* libffi: (libffi).			Portable foreign-function interface library
+ @end direntry
+ 
+ @titlepage
+diff -urNp -x '*.orig' gcc-10.2.0.org/libgomp/libgomp.texi gcc-10.2.0/libgomp/libgomp.texi
+--- gcc-10.2.0.org/libgomp/libgomp.texi	2020-07-23 08:35:19.016402971 +0200
++++ gcc-10.2.0/libgomp/libgomp.texi	2021-03-21 01:21:39.492335808 +0100
+@@ -29,9 +29,9 @@ texts being (a) (see below), and with th
+ @end copying
+ 
+ @ifinfo
+-@dircategory GNU Libraries
++@dircategory Libraries:
+ @direntry
+-* libgomp: (libgomp).          GNU Offloading and Multi Processing Runtime Library.
++* libgomp: (libgomp).			GNU Offloading and Multi Processing Runtime Library
+ @end direntry
+ 
+ This manual documents libgomp, the GNU Offloading and Multi Processing
+diff -urNp -x '*.orig' gcc-10.2.0.org/libiberty/libiberty.texi gcc-10.2.0/libiberty/libiberty.texi
+--- gcc-10.2.0.org/libiberty/libiberty.texi	2020-07-23 08:35:19.048403324 +0200
++++ gcc-10.2.0/libiberty/libiberty.texi	2021-03-21 01:21:39.493335808 +0100
+@@ -11,10 +11,9 @@
+ @finalout
+ @c %**end of header
+ 
+-@dircategory GNU libraries
++@dircategory Libraries:
+ @direntry
+-* Libiberty: (libiberty).          Library of utility functions which
+-                                   are missing or broken on some systems.
++* Libiberty: (libiberty).		Library of utility functions which are missing or broken on some systems
+ @end direntry
+ 
+ @macro libib
+diff -urNp -x '*.orig' gcc-10.2.0.org/libitm/libitm.texi gcc-10.2.0/libitm/libitm.texi
+--- gcc-10.2.0.org/libitm/libitm.texi	2020-07-23 08:35:19.056403412 +0200
++++ gcc-10.2.0/libitm/libitm.texi	2021-03-21 01:21:39.493335808 +0100
+@@ -18,9 +18,9 @@ Free Documentation License''.
+ @end copying
+ 
+ @ifinfo
+-@dircategory GNU Libraries
++@dircategory Libraries:
+ @direntry
+-* libitm: (libitm).                    GNU Transactional Memory Library
++* libitm: (libitm).			GNU Transactional Memory Library
+ @end direntry
+ 
+ This manual documents the GNU Transactional Memory Library.
+diff -urNp -x '*.orig' gcc-10.2.0.org/libquadmath/libquadmath.texi gcc-10.2.0/libquadmath/libquadmath.texi
+--- gcc-10.2.0.org/libquadmath/libquadmath.texi	2020-07-23 08:35:19.120404117 +0200
++++ gcc-10.2.0/libquadmath/libquadmath.texi	2021-03-21 01:21:39.493335808 +0100
+@@ -23,9 +23,9 @@ copy and modify this GNU manual.
+ @end copying
+ 
+ @ifinfo
+-@dircategory GNU Libraries
++@dircategory Libraries:
+ @direntry
+-* libquadmath: (libquadmath).                  GCC Quad-Precision Math Library
++* libquadmath: (libquadmath).		GCC Quad-Precision Math Library
+ @end direntry
+ 
+ This manual documents the GCC Quad-Precision Math Library API.
+--- gcc-11.5.0/gcc/d/gdc.texi.orig	2024-07-19 07:52:43.845493268 +0200
++++ gcc-11.5.0/gcc/d/gdc.texi	2024-12-12 22:08:23.782172397 +0100
+@@ -34,9 +34,9 @@ man page gfdl(7).
+ 
+ @ifinfo
+ @format
+-@dircategory Software development
++@dircategory Programming Languages:
+ @direntry
+-* gdc: (gdc).               A GCC-based compiler for the D language
++* gdc: (gdc).				A GCC-based compiler for the D language
+ @end direntry
+ @end format
+ 
